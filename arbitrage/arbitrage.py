@@ -1,8 +1,7 @@
 import requests
 
-# Function to fetch the latest trade price from Binance
+
 def get_binance_latest_trade_price():
-    # Binance API endpoint for ticker price
     url = 'https://api.binance.com/api/v3/ticker/price'
     symbol = 'BTCUSDT'
     params = {'symbol': symbol}
@@ -17,7 +16,7 @@ def get_binance_latest_trade_price():
         print('Failed to retrieve ticker price from Binance. Status code:', response.status_code)
         return None
 
-# Function to fetch ticker data (last trade price) from Coinbase Pro
+
 def get_coinbase_pro_last_trade_price():
     url = 'https://api.pro.coinbase.com/products/BTC-USD/ticker'
 
@@ -31,9 +30,8 @@ def get_coinbase_pro_last_trade_price():
         print('Failed to retrieve ticker data from Coinbase Pro. Status code:', response.status_code)
         return None
 
-# Function to fetch the latest trade price from gate.io
+
 def get_gateio_latest_trade_price():
-    # gate.io API endpoint for ticker price
     url = 'https://api.gate.io/api2/1/ticker/btc_usdt'
 
     response = requests.get(url)
@@ -46,14 +44,13 @@ def get_gateio_latest_trade_price():
         print('Failed to retrieve ticker price from gate.io. Status code:', response.status_code)
         return None
 
-# Calculate and compare prices
-# Modify the function to return a list of opportunities
+
 def find_max_arbitrage_opportunity():
     binance_price = get_binance_latest_trade_price()
     coinbase_price = get_coinbase_pro_last_trade_price()
     gateio_price = get_gateio_latest_trade_price()
 
-    opportunities = []  # Initialize an empty list to store opportunities
+    opportunities = []  # 
 
     if binance_price is not None and coinbase_price is not None and gateio_price is not None:
         price_difference_bc = binance_price - coinbase_price
@@ -74,10 +71,9 @@ def find_max_arbitrage_opportunity():
     else:
         opportunities.append('Price comparison failed due to missing data.')
 
-    return opportunities  # Return the list of opportunities
+    return opportunities  
 
 
-# Call the function to find the biggest arbitrage opportunity
 def main():
     find_max_arbitrage_opportunity()
 
