@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Arbitrage</title>
+    <!-- Add your CSS link here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to Crypto Arbitrage</h1>
+            <p>Find the best arbitrage opportunities in the crypto market.</p>
+        </section>
+
+        <section class="opportunities">
+            <h2>Arbitrage Opportunities</h2>
+            <ul>
+                {% for opportunity in opportunities %}
+                    <li>{{ opportunity }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Crypto Arbitrage</p>
+    </footer>
+
+    <!-- Add your JavaScript files here if needed -->
+</body>
+</html>
